@@ -1,9 +1,10 @@
 FROM ubuntu 
 
 RUN apt update 
-RUN apt install –y nginx
+RUN apt install –y apache2 
+RUN apt install –y apache2-utils 
 RUN apt clean 
 
 EXPOSE 3000
 
-#CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]

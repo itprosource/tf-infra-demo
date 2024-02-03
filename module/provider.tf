@@ -1,3 +1,4 @@
+/*
 terraform {
   cloud {
     organization = "athome"
@@ -7,7 +8,7 @@ terraform {
     }
   }
 }
-
+*/
 
 provider "aws" {
   region = "us-east-1"

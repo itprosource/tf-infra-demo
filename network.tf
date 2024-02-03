@@ -7,7 +7,7 @@ resource "aws_vpc" "vpc" {
 }
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.vpc.id
 
   tags = {
     Name = "${var.vpc_name}-igw"
@@ -16,7 +16,7 @@ resource "aws_internet_gateway" "igw" {
 
 resource "aws_subnet" "subnet" {
   for_each = var.subnets
-  vpc_id     = aws_vpc.main.id
+  vpc_id     = aws_vpc.vpc.id
   cidr_block = each.value
 
   tags = {

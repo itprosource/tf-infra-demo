@@ -8,7 +8,7 @@ WORKDIR /usr/share/nginx/html
 #COPY ./your-static-content /usr/share/nginx/html
 
 # Expose port 3000
-EXPOSE 3000
+EXPOSE 80
 
 # Command to start Nginx when the container runs
 CMD ["nginx", "-g", "daemon off;"]

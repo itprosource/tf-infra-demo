@@ -1,10 +1,9 @@
-FROM ubuntu 
+FROM node:10
 
-RUN apt update 
-RUN apt install –y apache2 
-RUN apt install –y apache2-utils 
-RUN apt clean 
+WORKDIR /app
+
+RUN npm install
 
 EXPOSE 3000
 
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+CMD ["npm", "start"]

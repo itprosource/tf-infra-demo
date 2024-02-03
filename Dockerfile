@@ -1,9 +1,14 @@
-FROM node:10
+# Use the official Nginx base image
+FROM nginx:latest
 
-WORKDIR /app
+# Set the working directory to the default Nginx public directory
+WORKDIR /usr/share/nginx/html
 
-RUN npm install
+# Copy your static content (HTML, CSS, JS, etc.) to the container
+#COPY ./your-static-content /usr/share/nginx/html
 
+# Expose port 3000
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Command to start Nginx when the container runs
+CMD ["nginx", "-g", "daemon off;"]

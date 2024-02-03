@@ -5,7 +5,7 @@ provider "aws" {
 module "ecs_webserver" {
   source = "../"
 
-  name = "webserver"
+  name = "apache"
   cidr = "10.0.0.0/16"
 
   azs = [
@@ -21,6 +21,6 @@ module "ecs_webserver" {
     "10.0.4.0/24"
   ]
 
-  image = "nginx"
+  image = "apache"
 
 }

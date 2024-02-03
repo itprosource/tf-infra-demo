@@ -103,7 +103,7 @@ resource "tls_self_signed_cert" "alb_tls" {
 
   subject {
     common_name  = "*.elb.amazonaws.com"
-    organization = "Rearc"
+    organization = "athome"
   }
 
   validity_period_hours = 730

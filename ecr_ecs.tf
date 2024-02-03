@@ -17,7 +17,7 @@ resource "aws_ecs_cluster" "primary" {
 }
 
 resource "aws_ecs_task_definition" "aws-ecs-task" {
-  family = "${var.name}-nginx"
+  family = "${var.name}-apache"
 
   container_definitions = <<DEFINITION
   [

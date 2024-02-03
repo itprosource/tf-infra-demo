@@ -1,0 +1,23 @@
+{
+  "family": "nginx-task",
+  "containerDefinitions": [
+    {
+      "name": "nginx-container",
+      "image": "nginx-ecr:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ]
+    }
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::328270397459:role/nginx-execution-task-role",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ]
+}

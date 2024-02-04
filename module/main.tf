@@ -5,7 +5,7 @@ provider "aws" {
 module "serverless" {
   source = "../"
 
-  name = "nginx"
+  name = "node"
   cidr = "10.0.0.0/16"
 
   azs = [
@@ -21,6 +21,6 @@ module "serverless" {
     "10.0.4.0/24"
   ]
 
-  image = "nginx"
+  image = "node"
 
 }

@@ -2,10 +2,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "ecs_webserver" {
+module "serverless" {
   source = "../"
 
-  name = "nginx"
+  name = "node"
   cidr = "10.0.0.0/16"
 
   azs = [
@@ -21,6 +21,6 @@ module "ecs_webserver" {
     "10.0.4.0/24"
   ]
 
-  image = "nginx"
+  image = "node"
 
 }

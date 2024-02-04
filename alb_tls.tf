@@ -28,7 +28,7 @@ resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_alb.application_load_balancer.id
   port              = "80"
   protocol          = "HTTP"
-
+ 
   default_action {
     type = "redirect"
 

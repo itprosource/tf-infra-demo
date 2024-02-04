@@ -30,6 +30,6 @@ resource "aws_db_instance" "default" {
   vpc_security_group_ids = [aws_security_group.example_db_sg.id]
 }
 
-output "rds_endpoint" {
-  value = aws_db_instance.example_db.endpoint
-}
+#output "rds_endpoint" {
+#  value = aws_db_instance.example_db.endpoint
+#}

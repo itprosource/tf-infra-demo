@@ -28,7 +28,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
       "essential": true,
       "portMappings": [
         {
-          "containerPort": 3000,
+          "containerPort": 80,
           "hostPort": 80
         }
       ],

@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "ecs_webserver" {
+module "serverless" {
   source = "../"
 
   name = "nginx"

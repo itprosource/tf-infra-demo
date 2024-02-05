@@ -1,4 +1,4 @@
-# ALB
+# ALB - Front-end public load balancer.
 resource "aws_alb" "application_load_balancer" {
   name               = "${var.name}-alb"
   internal           = false
@@ -11,6 +11,7 @@ resource "aws_alb" "application_load_balancer" {
   }
 }
 
+# HTTPS listener. 
 resource "aws_lb_listener" "https" {
   load_balancer_arn = aws_alb.application_load_balancer.id
   port              = "443"
@@ -24,6 +25,7 @@ resource "aws_lb_listener" "https" {
   }
 }
 
+# HTTP listener. Redirects automatically to 443.
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_alb.application_load_balancer.id
   port              = "80"
@@ -40,6 +42,7 @@ resource "aws_lb_listener" "http" {
   }
 }
 
+# Security group attached to LB. Allows ingress from any IP but only on ports 443 and 80.
 resource "aws_security_group" "load_balancer_security_group" {
   vpc_id = aws_vpc.vpc.id
 
@@ -70,6 +73,7 @@ resource "aws_security_group" "load_balancer_security_group" {
   }
 }
 
+# Target group to which LB listener are pointing. 
 resource "aws_lb_target_group" "target_group" {
   name        = "${var.name}-tg"
   port        = 443
@@ -92,7 +96,8 @@ resource "aws_lb_target_group" "target_group" {
   }
 }
 
-#TLS cert
+# TLS cert - The below blocks generate a self-signed cert and upload to AWS Cert Mgmt - cert is then attached to HTTPS listener. 
+# Will not show as secure because it is self-signed, but a cert is necessary to add HTTPS - using this just for demonstration. 
 resource "tls_private_key" "alb_tls" {
   algorithm = "RSA"
 }

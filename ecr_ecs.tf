@@ -1,4 +1,4 @@
-# ECR
+# Elastic Container Repository - where the container image is stored. 
 resource "aws_ecr_repository" "aws-ecr" {
   name = "${var.name}-ecr"
   image_tag_mutability = "MUTABLE"
@@ -8,7 +8,8 @@ resource "aws_ecr_repository" "aws-ecr" {
   }
 }
 
-# ECS
+# Elastic Container Service (ECS) - platform for managing containers.
+# Setting up as FARGATE type, meaning we don't have to manage the hosts. AWS manages the hosts for us. 
 resource "aws_ecs_cluster" "primary" {
   name = "${var.name}-cluster"
   tags = {
@@ -51,10 +52,13 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
   }
 }
 
+# Data source that exports the family name of the ECS task definition. 
+# Might not be needed, cannot recall why I added this. Ha! 
 data "aws_ecs_task_definition" "main" {
   task_definition = aws_ecs_task_definition.aws-ecs-task.family
 }
 
+# ECS service - the platform for our task definition within ECS. Runs our tasks (Containers).
 resource "aws_ecs_service" "aws-ecs-service" {
   name                 = "${var.name}-ecs-service"
   cluster              = aws_ecs_cluster.primary.id
@@ -86,6 +90,7 @@ resource "aws_ecs_service" "aws-ecs-service" {
   }
 }
 
+# Security group managing access to ECS. Ingress allows all communication but ONLY from resources which have the below security group attached to them. 
 resource "aws_security_group" "service_security_group" {
   vpc_id = aws_vpc.vpc.id
 
@@ -109,7 +114,7 @@ resource "aws_security_group" "service_security_group" {
   }
 }
 
-# ECS IAM Role
+# ECS IAM Role allowing our ECS cluster to manage tasks. 
 resource "aws_iam_role" "ecsTaskExecutionRole" {
   name               = "${var.name}-execution-task-role"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
@@ -118,6 +123,7 @@ resource "aws_iam_role" "ecsTaskExecutionRole" {
   }
 }
 
+# Data source getting permissions from the below specified service role. 
 data "aws_iam_policy_document" "assume_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
@@ -129,6 +135,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
   }
 }
 
+# Attaches the policy created above to the role also created above. 
 resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
   role       = aws_iam_role.ecsTaskExecutionRole.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"

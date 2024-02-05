@@ -1,3 +1,4 @@
+# Variable declarations. 
 variable "name" {
   type = string
   description = "Overarching name attached to all resources for identification purposes."
@@ -26,10 +27,4 @@ variable "azs" {
   type = list(string)
   description = "Availability Zones in which to deploy resources. Must be in the same region."
   default = []
-}
-
-variable "image" {
-  type = string
-  description = "Name of ECR image."
-  default = ""
 }

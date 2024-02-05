@@ -1,4 +1,6 @@
 /*
+######################## IGNORE FOR NOW #####################################
+
 resource "aws_db_subnet_group" "example_subnet_group" {
   name       = "example-subnet-group"
   subnet_ids = [aws_subnet.private[0].id, aws_subnet.private[1].id]

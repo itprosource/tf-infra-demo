@@ -7,7 +7,7 @@ resource "aws_vpc" "vpc" {
   }
 }
 
-# Public Subnets
+## Public Subnets
 resource "aws_subnet" "public" {
   count = length(var.public_subnets)
   cidr_block = element(var.public_subnets,count.index)

@@ -23,7 +23,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
   [
     {
       "name": "${var.name}-container",
-      "image": "${var.image}-ecr:latest",
+      "image": "${var.name}-ecr:latest",
       "entryPoint": [],
       "essential": true,
       "portMappings": [

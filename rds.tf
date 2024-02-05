@@ -1,3 +1,4 @@
+/*
 resource "aws_db_subnet_group" "example_subnet_group" {
   name       = "example-subnet-group"
   subnet_ids = [aws_subnet.private[0].id, aws_subnet.private[1].id]
@@ -33,3 +34,4 @@ resource "aws_db_instance" "default" {
 output "rds_endpoint" {
   value = aws_db_instance.example_db.endpoint
 }
+*/

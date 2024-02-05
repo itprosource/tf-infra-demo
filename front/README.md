@@ -1,77 +1,35 @@
-# React.js Hooks CRUD App with Axios & Web API example
-Build a React Hooks CRUD Application to consume Web API with Axios, display and modify data with Router & Bootstrap.
-- Each Tutorial has id, title, description, published status.
-- We can create, retrieve, update, delete Tutorials.
-- There is a Search bar for finding Tutorials by title.
+# Random Chuck Norris Jokes
 
-![react-hooks-crud-axios-api-example](react-hooks-crud-axios-api-example.png)
+**Tutorial**: [How to Deploy Node.js Applications with Docker](https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/).
 
-For instruction, please visit:
-> [React Hooks CRUD example with Axios and Web API](https://bezkoder.com/react-hooks-crud-axios-api/)
+![Screenshot or GIF of the application in action](screenshot.png)
 
-More Practice:
-> [React Hooks (Typescript) CRUD example with Axios and Web API](https://bezkoder.com/react-typescript-api-call/)
+## 🟢 Prerequisites
 
-> [React Table example: CRUD App with react-table v7](https://bezkoder.com/react-table-example-hooks-crud/)
+You must have Node.js and `npm` installed on your machine. This project was
+built against the following versions:
 
-> [React Pagination using Hooks example](https://bezkoder.com/react-pagination-hooks/)
+- Node.js v16.14.0.
+- npm v8.3.1.
 
-> [React Hooks File Upload example](https://bezkoder.com/react-hooks-file-upload/)
+## 📦 Getting started
 
-> [React Hooks: JWT Authentication & Authorization example](https://bezkoder.com/react-hooks-jwt-auth/)
+- Clone this repo to your machine:
 
-> [React + Redux + Hooks: JWT Authentication & Authorization example](https://bezkoder.com/react-hooks-redux-login-registration-example/)
-
-Fullstack with Node.js Express:
-> [React + Node.js Express + MySQL](https://bezkoder.com/react-node-express-mysql/)
-
-> [React + Node.js Express + PostgreSQL](https://bezkoder.com/react-node-express-postgresql/)
-
-> [React + Node.js Express + MongoDB](https://bezkoder.com/react-node-express-mongodb-mern-stack/)
-
-Fullstack with Spring Boot:
-> [React + Spring Boot + MySQL](https://bezkoder.com/react-spring-boot-crud/)
-
-> [React + Spring Boot + PostgreSQL](https://bezkoder.com/spring-boot-react-postgresql/)
-
-> [React + Spring Boot + MongoDB](https://bezkoder.com/react-spring-boot-mongodb/)
-
-Fullstack with Django:
-> [React.js Hooks + Django Rest Framework](https://bezkoder.com/django-react-hooks/)
-
-Serverless with Firebase:
-> [React Firebase Hooks: CRUD App with Realtime Database example](https://bezkoder.com/react-firebase-hooks-crud/)
-
-> [React Hooks Firestore example: CRUD App](https://bezkoder.com/react-hooks-firestore/)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Set port
-.env
-```
-PORT=8081
+```shell
+git clone https://github.com/betterstack-community/chucknorris
 ```
 
-## Project setup
+- `cd` into the project folder and run `npm install` to download dependencies.
+- Execute the command below to start the development server:
 
-In the project directory, you can run:
-
-```
-npm install
-# or
-yarn install
-```
-
-or
-
-### Compiles and hot-reloads for development
-
-```
+```shell
 npm start
-# or
-yarn start
 ```
 
-Open [http://localhost:8081](http://localhost:8081) to view it in the browser.
+- Visit http://localhost:3000 in your browser.
 
-The page will reload if you make edits.
+## ⚖ License
+
+The code used in this project and in the linked tutorial are licensed under the
+[Apache License, Version 2.0](LICENSE).

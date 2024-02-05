@@ -1,4 +1,4 @@
-# ALB - Front-end public load balancer.
+## ALB - Front-end public load balancer.
 resource "aws_alb" "application_load_balancer" {
   name               = "${var.name}-alb"
   internal           = false

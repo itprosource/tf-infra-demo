@@ -1,9 +1,9 @@
 {
-  "family": "node-task",
+  "family": "chucknorris-task",
   "containerDefinitions": [
     {
-      "name": "node-container",
-      "image": "node-ecr:latest",
+      "name": "chucknorris-container",
+      "image": "chucknorris-ecr:latest",
       "essential": true,
       "portMappings": [
         {

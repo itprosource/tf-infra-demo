@@ -25,7 +25,7 @@ resource "aws_ecs_cluster" "primary" {
     Name        = "${var.name}-ecs"
   }
 }
-
+#
 resource "aws_ecs_task_definition" "frontend-aws-ecs-task" {
   family = "${var.name}-frontend"
 

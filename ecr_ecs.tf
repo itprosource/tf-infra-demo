@@ -32,7 +32,7 @@ resource "aws_ecs_task_definition" "frontend-aws-ecs-task" {
   container_definitions = <<DEFINITION
   [
     {
-      "name": "${var.name}-frontend",
+      "name": "${var.name}-frontend-container",
       "image": "${var.name}-frontend-ecr:latest",
       "entryPoint": [],
       "essential": true,

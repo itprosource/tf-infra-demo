@@ -1,10 +1,19 @@
 # Elastic Container Repository - where the container image is stored. 
-resource "aws_ecr_repository" "aws-ecr" {
-  name = "${var.name}-ecr"
+resource "aws_ecr_repository" "frontend-ecr" {
+  name = "${var.name}-frontend-ecr"
   image_tag_mutability = "MUTABLE"
 
   tags = {
-    Name        = "${var.name}-ecr"
+    Name        = "${var.name}-frontend-ecr"
+  }
+}
+
+resource "aws_ecr_repository" "backend-ecr" {
+  name = "${var.name}-backend-ecr"
+  image_tag_mutability = "MUTABLE"
+
+  tags = {
+    Name        = "${var.name}-backend-ecr"
   }
 }
 

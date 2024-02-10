@@ -1,9 +1,9 @@
 {
-  "family": "chucknorris-task",
+  "family": "chucknorris-task-01",
   "containerDefinitions": [
     {
-      "name": "chucknorris-container",
-      "image": "chucknorris-ecr:latest",
+      "name": "chucknorris-frontend-container",
+      "image": "chucknorris-frontend-ecr:latest",
       "essential": true,
       "portMappings": [
         {
